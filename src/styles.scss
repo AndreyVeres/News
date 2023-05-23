@@ -1,0 +1,116 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --red-color: '#FFfFFF';
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Aller";
+  font-size: 14px;
+
+}
+
+#root {
+  height: 100%;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  background-color: #242425;
+  font-size: calc(max(1.1vw, 1.1vh));
+}
+
+
+
+.button-black {
+  width: 10vw;
+  margin-left: 40vw;
+  padding: 0.7vw 1.2vw;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  box-shadow: #fff 0px 1px 2px 0px, #fff 0px 1px 3px 1px;
+  transition: all .4s;
+  color: #fff;
+}
+
+a {
+  color: inherit;
+}
+
+.button-black:hover {
+  color: black;
+  box-shadow: none;
+  background-color: #fcbe37;
+
+}
+
+.button-black:disabled {
+  background-color: gray;
+}
