@@ -1,0 +1,53 @@
+:host {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  flex-direction: column;
+  gap: 2vw;
+  text-align: left;
+
+}
+
+.profile {
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      display: flex;
+      justify-content: space-between;
+      gap: 5vw;
+    }
+  }
+
+  &-avatar-wrapper {
+    position: relative;
+  }
+
+  &-link {
+    color: #fcbe37;
+  }
+
+  &-link:hover {
+    text-decoration: underline;
+  }
+
+  &-avatar {
+    width: 15vw;
+  }
+}
+
+.edit-button {
+  background-color: transparent;
+  position: absolute;
+  right: -3vw;
+  cursor: pointer;
+
+
+
+}
+
+.edit-button:hover svg path {
+  fill: #fcbe37;
+}

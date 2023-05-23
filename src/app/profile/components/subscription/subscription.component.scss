@@ -1,0 +1,36 @@
+.subs-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+
+.sub {
+  background-color: #fff;
+  padding: 1vw 2vw;
+  border-radius: 5px;
+  min-width: 20vw;
+  height: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3vw;
+
+  &-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-benefits {
+    height: 9vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
