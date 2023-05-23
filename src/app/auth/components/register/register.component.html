@@ -1,0 +1,46 @@
+<div class="form-wrapper">
+  <h2>SIGN UP</h2>
+  <a class="form-link" [routerLink]="['/auth/sign-in']">
+    Have an account?</a>
+  <form [formGroup]="loginForm" (ngSubmit)="registerHandler()" class="form">
+
+    <div class="form-item">
+      <input [class.has-error]="username?.errors && username?.touched" focus formControlName="username"
+        class="form-input" type="text" placeholder="Enter Username" />
+      <ng-container *ngIf="username?.touched">
+        <span class="form-error" *ngIf="username?.errors?.required">Username is required.</span>
+        <span class="form-error" *ngIf="username?.errors?.minlength">Username should be at least
+          {{username?.errors?.minlength.requiredLength }} characters.</span>
+      </ng-container>
+      <span class="form-error" *ngIf="isExistingUser.username === username?.value">User with this name already
+        exists</span>
+    </div>
+
+    <div class="form-item">
+      <input formControlName="email" class="form-input" type="email" placeholder="Enter E-mail">
+      <ng-container *ngIf="email?.touched">
+
+        <span class="form-error" *ngIf="email?.errors?.required">Email is required.</span>
+
+        <span class="form-error" *ngIf="email?.errors?.email">Enter correct E-mail</span>
+      </ng-container>
+      <span class="form-error" *ngIf="isExistingUser.email === email?.value">This email is already in use</span>
+    </div>
+
+    <div class="form-item">
+      <input formControlName="password" class="form-input" type="password" placeholder="Password" />
+      <ng-container *ngIf="password?.touched">
+        <span class="form-error" *ngIf="password?.errors?.required">password is required.</span>
+        <span class="form-error" *ngIf="password?.errors?.minlength">password should be at least
+          {{password?.errors?.minlength.requiredLength }} characters.</span>
+      </ng-container>
+    </div>
+
+    <div class="form-item">
+      <input formControlName="confirmPassword" class="form-input" type="password" placeholder="Confirm your Password" />
+      <span class="form-error" *ngIf="loginForm.errors?.passwordMismatch && password?.touched ">password must
+        match</span>
+    </div>
+    <button class="button-black" [disabled]="loginForm.invalid">Register</button>
+  </form>
+</div>

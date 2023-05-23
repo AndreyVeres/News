@@ -1,0 +1,9 @@
+<div class="form-wrapper">
+  <h2>SIGN IN</h2>
+  <a class="form-link" [routerLink]="['/auth/sign-up']">Need an account?</a>
+  <form [formGroup]="loginForm" (ngSubmit)="loginHandler()" class="form">
+    <input focus formControlName="username" class="form-input" type="text" placeholder="Username" />
+    <input formControlName="password" class="form-input" type="password" placeholder="Password" />
+    <button class="button-black">Login</button>
+  </form>
+</div>
