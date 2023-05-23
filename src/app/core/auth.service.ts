@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
-import { HttpClient, HttpErrorResponse } from '@angular/common/http'
-import { catchError, map, Observable, tap, throwError } from 'rxjs';
+import { HttpClient } from '@angular/common/http'
+import { map, Observable, tap } from 'rxjs';
 import { Router } from '@angular/router';
 
 import { NotificationService } from '../shared/services/notification.service';
@@ -23,7 +23,7 @@ export class AuthService {
   ) { }
 
   login({ username, password }: Pick<IUser, 'username' | 'password'>): Observable<IUser | void> {
-    return this.http.get<IUser[]>('http://localhost:3000/users')
+    return this.http.get<IUser[]>('users')
       .pipe(
         map((users) => users.find(user => user.password === password && user.username === username)),
         tap((user) => {
@@ -39,7 +39,6 @@ export class AuthService {
           this.resolveAuthRequest()
           return user
         }),
-        catchError(this.errorHandler.bind(this))
       )
   }
 
@@ -47,15 +46,14 @@ export class AuthService {
     const userId = localStorage.getItem('user');
 
     if (userId) {
-      this.http.get<IUser>(`http://localhost:3000/users/${userId}`)
+      this.http.get<IUser>(`users/${userId}`)
         .pipe(
           tap((user) => {
             if (user) {
               this.isAuth = true;
               this.profileService.user.next(user)
             }
-          }),
-          catchError(this.errorHandler.bind(this))
+          })
         ).subscribe(() => {
           this.resolveAuthRequest()
         })
@@ -66,17 +64,19 @@ export class AuthService {
   }
 
   checkUser({ username, email }: IUser): Observable<IUser | undefined> {
-    return this.http.get<IUser[]>(`http://localhost:3000/users`)
+    return this.http.get<IUser[]>(`users`)
       .pipe(
-        catchError(this.errorHandler.bind(this)),
         map((users) => users.find(user => user.username === username || user.email === email)),
       )
   }
 
   register(user: IUser): Observable<IUser> {
-    return this.http.post<IUser>('http://localhost:3000/users', user)
+    return this.http.post<IUser>('users', {
+      ...user,
+      subscription: USER_SUBSCRIPTIONS.STANDART,
+      avatar: '../../../../assets/avatar.svg'
+    })
       .pipe(
-        catchError(this.errorHandler.bind(this)),
         tap(() => {
           this.ns.notifySuccess('User was created')
         })
@@ -90,10 +90,4 @@ export class AuthService {
     this.ns.notifySuccess('Logout completed')
     localStorage.removeItem('user')
   }
-
-  private errorHandler(error: HttpErrorResponse) {
-    this.ns.showError(error.message)
-    return throwError(() => error.message)
-  }
-
 }

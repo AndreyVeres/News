@@ -1,9 +1,8 @@
 import { ISubscription, IUser } from '../../core/models/user';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, Observable, throwError } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { NotificationService } from 'src/app/shared/services/notification.service';
-
 
 @Injectable({
   providedIn: 'root'
@@ -13,23 +12,10 @@ export class ProfileService {
   constructor(private http: HttpClient, private ns: NotificationService) { }
 
   getUserById(id: number): Observable<IUser> {
-    return this.http.get<IUser>(`http://localhost:3000/users/${id}`)
-      .pipe(
-        catchError(this.errorHandler.bind(this))
-      )
+    return this.http.get<IUser>(`users/${id}`)
   }
 
   getSubscriptions(): Observable<ISubscription[]> {
-    return this.http.get<ISubscription[]>('http://localhost:3000/subscriptions')
-      .pipe(
-        catchError(this.errorHandler.bind(this))
-      )
+    return this.http.get<ISubscription[]>('subscriptions')
   }
-
-
-  private errorHandler(error: HttpErrorResponse) {
-    this.ns.showError(error.message)
-    return throwError(() => error.message)
-  }
-
 }

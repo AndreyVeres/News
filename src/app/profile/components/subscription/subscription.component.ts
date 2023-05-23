@@ -1,5 +1,5 @@
 import { Observable, Subscription } from 'rxjs';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProfileService } from 'src/app/profile/services/profile.service';
 import { ISubscription } from 'src/app/core/models/user';
 

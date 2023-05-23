@@ -72,6 +72,14 @@
       "subscription": "standart",
       "avatar": "../../../../assets/avatar.svg",
       "id": 1
+    },
+    {
+      "username": "USERNAME2",
+      "password": "123123",
+      "email": "ADASD@MAIL.RU",
+      "subscription": "standart",
+      "avatar": "../../../../assets/avatar.svg",
+      "id": 2
     }
   ],
   "subscriptions": [
