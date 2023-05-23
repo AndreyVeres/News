@@ -1,0 +1,56 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3vw;
+  background-color: #fcbe37;
+  color: #000;
+  margin-bottom: 3.5vw;
+  padding: 0 1vw;
+
+  .logout {
+    background-color: transparent;
+    width: 3vw;
+    cursor: pointer;
+    transition: all .5s;
+  }
+
+  &-bar {
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    justify-content: center;
+
+    &-item {
+      list-style: none;
+
+    }
+
+    &-link {
+      color: inherit;
+      text-decoration: none;
+      padding: 0.5vw 0.8vw;
+      transition: all .5s;
+      border-radius: 5px;
+    }
+
+    &-link:hover {
+      color: #fff;
+      background-color: #242425;
+    }
+  }
+
+  .logo img {
+    width: 100px;
+  }
+}
+
+.nav-bar-item .logout svg path {
+  transition: all .5s;
+}
+
+
+.nav-bar-item .logout:hover svg path {
+  fill: #000;
+  transform: scale(1.03);
+}
