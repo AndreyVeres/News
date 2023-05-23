@@ -1,0 +1,7 @@
+<ng-container *ngIf="showModal$ | async">
+  <div (click)="closeModal()" class="background">
+    <div (click)="$event.stopPropagation()" class="content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</ng-container>

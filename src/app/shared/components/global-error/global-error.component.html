@@ -1,0 +1,4 @@
+<div class="global-error" *ngIf="error$ | async as error">
+  <p>{{error}}</p>
+  <button class="close-error" (click)="clearError()">X</button>
+</div>

@@ -1,0 +1,16 @@
+.global-error {
+  background-color: red;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
+  position: absolute;
+  top: 3vw;
+  left: 0;
+  right: 0;
+}
+
+.close-error {
+  background-color: transparent;
+  cursor: pointer;
+}
