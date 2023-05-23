@@ -1,0 +1,18 @@
+<div class="filter">
+
+  <div class="search">
+    <input #newItem class="filter-search" type="search" placeholder="find news..."
+      (input)="setSearchQuery(newItem.value)">
+    <svg class="filter-search-icon" width="1.5vw" height="1.5vw" viewBox="0 0 20 20" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M19.3359 18.207L14.6797 13.5508C15.8164 12.1641 16.4961 10.3945 16.4961 8.46094C16.4961 4.02734 12.8984 0.429688 8.46484 0.429688C4.02734 0.429688 0.429688 4.02734 0.429688 8.46484C0.429688 12.9023 4.02734 16.5 8.46484 16.5C10.3945 16.5 12.168 15.8203 13.5547 14.6836L18.207 19.3359C18.5195 19.6484 19.0234 19.6484 19.3359 19.3359C19.6484 19.0234 19.6484 18.5195 19.3359 18.207ZM2.02344 8.46484C2.02344 4.91016 4.90625 2.02734 8.46094 2.02734C12.0156 2.02734 14.8984 4.91016 14.8984 8.46484C14.8984 12.0195 12.0156 14.9023 8.46094 14.9023C4.90625 14.9023 2.02344 12.0195 2.02344 8.46484V8.46484Z"
+        fill="#444444" />
+    </svg>
+  </div>
+
+  <h4 class="filter-title">Popular tags</h4>
+  <div class="filter-tags-list">
+    <ng-content></ng-content>
+  </div>
+</div>

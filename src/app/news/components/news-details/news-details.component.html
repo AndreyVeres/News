@@ -1,0 +1,51 @@
+<div class="details" *ngIf="news">
+  <div class="details-header">
+    <h2 class="details-title">{{news.title}}</h2>
+    <p class="details-author-info">
+      <img [src]='user?.avatar' alt="user avatar">
+      <span>by {{user?.username}} at {{news.createdDate | date:'shortDate'}}</span>
+    </p>
+
+  </div>
+  <p class="details-descr">{{news.description}}</p>
+
+  <div class="comments-list">
+    <div class="nav-bar-item">
+      <ng-container *ngIf="user else loginLink">
+
+        <div class="comment-area">
+          <textarea (keydown)=" addCommentHandler($event)" [(ngModel)]="text"
+            placeholder="Leave your comment..."></textarea>
+          <button (click)="addCommentHandler()">
+            <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M3.12482 6.50031L7.49982 6.50031M3.07188 6.6825L1.61176 11.044C1.49732 11.3858 1.44013 11.5568 1.48119 11.6621C1.51682 11.7537 1.59344 11.8231 1.68801 11.8496C1.79694 11.8801 1.96138 11.8064 2.29038 11.6591L12.7358 6.97875C13.0575 6.83463 13.2184 6.76256 13.2682 6.66213C13.3115 6.57494 13.3117 6.4725 13.2686 6.38513C13.2191 6.28456 13.0585 6.212 12.7373 6.06681L2.28976 1.34528C1.96101 1.19671 1.7967 1.12243 1.68763 1.15264C1.59295 1.17887 1.51613 1.24811 1.48019 1.33956C1.43882 1.44486 1.49569 1.61605 1.60932 1.95841L3.07232 6.36625C3.09176 6.42494 3.10151 6.45425 3.10538 6.48431C3.10876 6.51094 3.10876 6.53788 3.10526 6.5645C3.10132 6.5945 3.09151 6.62381 3.07188 6.6825Z"
+                stroke="#000" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+
+        </div>
+
+
+
+
+      </ng-container>
+      <ng-template #loginLink>
+        <span>Guests can't leave comments, please </span> <a [routerLink]="['/auth/sign-in']">LOGIN</a>
+      </ng-template>
+    </div>
+
+    <ng-container *ngFor="let comment of news.comments">
+      <div class="comments-list-item">
+        <p class="comments-list-item-text">{{comment.text}}</p>
+        <div class="comment-info">
+          <img [src]="comment.author.avatar" alt="">
+          <span>{{comment.author.username}}</span>
+          <span>{{comment.date | date:'short'}}</span>
+        </div>
+      </div>
+
+    </ng-container>
+
+  </div>
+</div>

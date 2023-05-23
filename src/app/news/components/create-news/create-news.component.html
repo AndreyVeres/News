@@ -1,0 +1,15 @@
+<h2 class="create-title">Add your news</h2>
+<form [formGroup]="createNewsForm" class="create" (ngSubmit)="createNewsHandler()">
+  <div class="create-item">
+    <input focus formControlName='title' class="create-input" placeholder="News Title" type="text">
+  </div>
+  <div class="create-item">
+    <textarea formControlName="description" placeholder="News description" class="create-input" name=""
+      id="create-news-body" cols="30" rows="20"></textarea>
+  </div>
+  <div class="create-item">
+    <input formControlName="tags" class="create-input" placeholder="Enter Tags" type="text">
+  </div>
+
+  <button>Create</button>
+</form>

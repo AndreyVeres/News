@@ -1,0 +1,41 @@
+.news {
+  padding: 2vw 1vw;
+  color: #fff;
+  border-top: 0.1vw solid #fff;
+  border-bottom: 0.1vw solid #fff;
+
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+  }
+
+
+  h3 {
+    cursor: pointer;
+  }
+
+  &-header,
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+
+    &-tags {
+      display: flex;
+      gap: 0.5vw;
+
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #fcbe37;
+    }
+  }
+
+  &-comments-box {
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    justify-content: center;
+  }
+}

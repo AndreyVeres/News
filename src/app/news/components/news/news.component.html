@@ -1,0 +1,17 @@
+<div class="news-wrapper" *ngIf="news$ | async as news">
+  <ul *ngIf="(news | filterNews:searchQuery:activeCategory).length;else notFound" class="news-list">
+    <app-news-item *ngFor="let oneNews of news | filterNews:searchQuery:activeCategory" [news]="oneNews">
+    </app-news-item>
+  </ul>
+  <app-filter *ngIf="news | extractCategories as categories" (onChangeQuery)="setQuery($event)">
+    <ng-container *ngIf="categories.length">
+      <button toggle="active" testField="TEST" (click)="setCategory(categorie)" class="tags-button"
+        *ngFor="let categorie of categories ">
+        {{categorie}}</button>
+    </ng-container>
+  </app-filter>
+</div>
+
+<ng-template #notFound class="not-found-message">
+  <p class="not-found-message">No news found</p>
+</ng-template>

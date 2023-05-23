@@ -1,0 +1,52 @@
+.news-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+
+  .news-list {
+    flex-basis: 75%;
+  }
+
+  .not-found-message {
+    color: #fff;
+  }
+
+}
+
+
+.filter {
+  position: sticky;
+  top: 2vw;
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+
+  &-title {
+    color: #fff;
+  }
+
+  &-search {
+    width: 100%;
+    height: 4vh;
+    background-color: #fff;
+    padding: 0 1vw;
+    border-radius: 5px;
+    outline: none;
+  }
+}
+
+
+.tags-button {
+  margin: 0 0.5vw 0.5vw 0;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0.1vw 0.2vw;
+  transition: all 0.3s;
+}
+
+.active {
+  background-color: #fcbe37;
+  color: #fff;
+}
