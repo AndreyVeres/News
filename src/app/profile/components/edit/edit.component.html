@@ -1,0 +1,14 @@
+<form  [formGroup]="editForm" class="edit">
+
+
+    <input formControlName="username" id="name" type="text" placeholder="Enter new NAME">
+
+
+    <input formControlName="email" id="email" type="text" placeholder="enter new E-MAIL">
+
+
+    <input formControlName="password" id="name" type="text" placeholder="enter new password">
+
+
+  <button  (click)="changeHandler()">Change</button>
+</form>

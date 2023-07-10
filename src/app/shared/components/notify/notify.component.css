@@ -8,6 +8,7 @@
   left: -20vw;
   animation: slide;
   animation-duration: 3s;
+  z-index: 9999;
 }
 
 @keyframes slide {

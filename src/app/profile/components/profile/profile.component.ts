@@ -1,9 +1,8 @@
-import { Subscription } from 'rxjs';
-
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { IUser } from 'src/app/core/models/user';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { ISubscription, IUser } from 'src/app/core/models/user';
 import { NotificationService } from 'src/app/shared/services/notification.service';
+import { ProfileService } from '../../services/profile.service';
 
 
 @Component({
@@ -11,22 +10,24 @@ import { NotificationService } from 'src/app/shared/services/notification.servic
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit, OnDestroy {
-  user: IUser
-  subs = new Subscription()
-  constructor(private route: ActivatedRoute, private ns: NotificationService) { }
+export class ProfileComponent implements OnInit {
+  user$ = new BehaviorSubject<IUser | null>(null)
+  subscriptions$: Observable<ISubscription[]>
+  constructor(
+    private ns: NotificationService,
+    private profileService: ProfileService) { }
 
   openEditWindow() {
     this.ns.showModal()
   }
 
   ngOnInit(): void {
-    this.subs.add(
-      this.route.data.subscribe((data) => this.user = data['user'])
-    )
+    this.user$ = this.profileService.user
+    this.subscriptions$ = this.profileService.getSubscriptions()
   }
 
-  ngOnDestroy(): void {
-    this.subs.unsubscribe()
+  setActiveSubscription(name: string) {
+    this.profileService.changeSubscription(name).subscribe()
   }
+
 }

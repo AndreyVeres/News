@@ -33,6 +33,38 @@
           },
           "text": "ASDAGDFSGDFG",
           "date": "1686422169806"
+        },
+        {
+          "author": {
+            "username": "user2",
+            "avatar": "../../../../assets/avatar.svg"
+          },
+          "text": "cvbcvbcvbcvbcvbcvb",
+          "date": "1686746081092"
+        },
+        {
+          "author": {
+            "username": "user2",
+            "avatar": "../../../../assets/avatar.svg"
+          },
+          "text": "1123123",
+          "date": "1686746086259"
+        },
+        {
+          "author": {
+            "username": "USERNAME",
+            "avatar": "../../../../assets/avatar.svg"
+          },
+          "text": "aaaaaa",
+          "date": "1687693120824"
+        },
+        {
+          "author": {
+            "username": "USERNAME",
+            "avatar": "../../../../assets/avatar.svg"
+          },
+          "text": "bbbbbbbbbb",
+          "date": "1687693124489"
         }
       ],
       "author": {
@@ -70,32 +102,41 @@
         "avatar": "../../../../assets/avatar.svg"
       },
       "id": 3
+    },
+    {
+      "title": "qqqqq",
+      "description": "sgdfgfgsgdfgfgsgdfgfgsgdfgfgsgdfgfgsgdfgfgsgdfgfgsgdfgfg",
+      "categories": [
+        "tag1",
+        "tag2"
+      ],
+      "createdDate": "Wed Jun 14 2023 15:34:01 GMT+0300 (Москва, стандартное время)",
+      "likes": 0,
+      "comments": [],
+      "author": {
+        "username": "user2",
+        "avatar": "../../../../assets/avatar.svg"
+      },
+      "id": 4
     }
   ],
   "users": [
     {
       "username": "USERNAME",
       "password": "123123",
-      "email": "USERNAME@MAIL.RU",
-      "subscription": "standart",
+      "email": "USERNMAE@MAIL.RU",
+      "subscription": "deluxe",
       "avatar": "../../../../assets/avatar.svg",
-      "id": 1
+      "id": 1,
+      "name": "aaaaaaaaaaaaaaaaa"
     },
     {
       "username": "USERNAME2",
       "password": "123123",
-      "email": "ADASD@MAIL.RU",
+      "email": "ASDASD@MAIL.RU",
       "subscription": "standart",
       "avatar": "../../../../assets/avatar.svg",
       "id": 2
-    },
-    {
-      "username": "asdasdfsdf",
-      "password": "123123",
-      "email": "ahfgh@sf",
-      "subscription": "standart",
-      "avatar": "../../../../assets/avatar.svg",
-      "id": 3
     }
   ],
   "subscriptions": [
@@ -103,20 +144,15 @@
       "price": 4.99,
       "rating": 5,
       "name": "standart",
-      "benefits": [
-        "benefit-1",
-        "benefit-2"
-      ]
+      "benefits": []
     },
     {
       "price": 7.99,
       "rating": 5,
       "name": "deluxe",
       "benefits": [
-        "benefit-1",
-        "benefit-2",
-        "benefit-3",
-        "benefit-4"
+        "Change username",
+        "Change e-mail"
       ]
     },
     {
@@ -124,11 +160,9 @@
       "rating": 5,
       "name": "ultimate",
       "benefits": [
-        "benefit-1",
-        "benefit-2",
-        "benefit-3",
-        "benefit-4",
-        "benefit-5"
+        "Change username",
+        "Change e-mail",
+        "Change password"
       ]
     }
   ]

@@ -5,7 +5,6 @@ import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/
 })
 export class ToogleDirective {
   @Input('toggle') class: string;
-
   constructor(private el: ElementRef, private renderer: Renderer2) { }
 
   @HostListener('click', ['$event.target']) onClick(event: Event) {

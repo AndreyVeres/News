@@ -19,8 +19,6 @@ export class NewsResolver implements Resolve<INews> {
         return EMPTY
       }),
       tap(() => this.ns.hideSpinner())
-
     )
   }
-
 }

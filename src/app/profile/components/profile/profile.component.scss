@@ -3,12 +3,19 @@
   align-items: center;
   color: #fff;
   flex-direction: column;
-  gap: 2vw;
+  gap: 5vw;
   text-align: left;
 
 }
 
 .profile {
+
+
+  &-card {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+  }
 
   &-info {
     display: flex;
@@ -34,20 +41,75 @@
   }
 
   &-avatar {
-    width: 15vw;
+    width: 10vw;
   }
 }
 
 .edit-button {
   background-color: transparent;
   position: absolute;
-  right: -3vw;
+  right: 0;
   cursor: pointer;
-
-
-
 }
 
 .edit-button:hover svg path {
   fill: #fcbe37;
+}
+
+
+
+.subs-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+
+.sub {
+  background-color: #fff;
+  padding: 1vw 2vw;
+  border-radius: 5px;
+  color: #000;
+  min-width: 20vw;
+  height: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all .5s;
+
+  &-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-benefits {
+    height: 9vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  button {
+    cursor: pointer;
+    transition: all .3s;
+    padding: 0.5vw 1vw;
+    border-radius: 1vw;
+    box-shadow: gray 0px 5px 15px;
+  }
+
+  button:hover {
+    box-shadow: #fcbe37 0px 5px 15px;
+    transform: scale(1.1);
+  }
+
+  button:active {
+    box-shadow: rgb(1, 255, 77) 0px 5px 15px;
+  }
+}
+
+.sub:hover {
+  box-shadow: #fcbe37 0px 5px 15px;
+  transform: scale(1.02);
 }

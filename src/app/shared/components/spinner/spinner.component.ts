@@ -5,7 +5,7 @@ import { NotificationService } from '../../services/notification.service';
 @Component({
   selector: 'app-spinner',
   templateUrl: './spinner.component.html',
-  styleUrls: ['./spinner.component.css']
+  styleUrls: ['./spinner.component.css'],
 })
 export class SpinnerComponent {
   showSpinner$: Observable<boolean>

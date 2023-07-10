@@ -5,11 +5,12 @@ import { NotificationService } from '../../services/notification.service';
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  styleUrls: ['./modal.component.css'],
 })
 export class ModalComponent implements OnInit {
   showModal$: Observable<boolean>
-  constructor(private ns: NotificationService) { }
+  constructor(
+    private ns: NotificationService) { }
 
   closeModal() {
     this.ns.closeModal()

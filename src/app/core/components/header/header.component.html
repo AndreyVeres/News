@@ -1,6 +1,7 @@
 <header>
   <nav class="nav">
     <a class="logo">LOGO</a>
+    <!-- <app-breadcrumbs></app-breadcrumbs> -->
     <ul class="nav-bar">
       <li class="nav-bar-item">
         <a [routerLink]="['']" class="nav-bar-link" href="home">News</a>
@@ -10,7 +11,7 @@
       </li>
       <li class="nav-bar-item">
         <ng-container *ngIf="user?.id; else loginLink">
-          <a [routerLink]="['profile', user?.id]" class="nav-bar-link">{{ user?.username }}</a>
+          <a [routerLink]="['profile']" class="nav-bar-link">{{ user?.username }}</a>
         </ng-container>
         <ng-template #loginLink>
           <a class="nav-bar-link" [routerLink]="['auth/sign-in']">SIGN IN</a>

@@ -24,11 +24,7 @@ export class LoginComponent implements OnDestroy {
     if (!username || !password) return
     this.subs.add(
       this.authService.login({ username, password })
-        .subscribe((user) => {
-          if (user) {
-            console.log(`пользователь ${user.username} вошел`);
-          }
-        })
+        .subscribe()
     )
   }
 

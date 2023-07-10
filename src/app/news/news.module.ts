@@ -20,7 +20,6 @@ import { FilterNewsPipe } from './pipes/filter-news.pipe';
     FilterNewsPipe,
     CreateNewsComponent,
     ExtractCategoriesPipe,
-
   ],
   imports: [
     CommonModule,

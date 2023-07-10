@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { ApiInterceptor } from './interceptors/apiInterceptor.interceptor';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ApiInterceptor } from './interceptors/apiInterceptor.interceptor';
     CommonModule,
     RouterModule,
     HttpClientModule,
+    SharedModule
   ],
   exports: [
     HeaderComponent,

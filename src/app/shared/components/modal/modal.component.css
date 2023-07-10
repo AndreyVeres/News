@@ -1,3 +1,5 @@
+
+
 .background {
   background-color: rgba(0, 0, 0, 0.527);
   position: fixed;
@@ -8,13 +10,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99;
 }
 
 .content {
   width: 40vw;
-  height: 30vw;
+  padding: 2vw;
   background-color: #fff;
   position: absolute;
-
-  z-index: 999;
+  border-radius: 0.5vw;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }

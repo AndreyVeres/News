@@ -17,14 +17,13 @@ import { ModalComponent } from './components/modal/modal.component';
     ModalComponent,
   ],
   imports: [CommonModule],
-  providers: [],
-  exports: [
+  exports:[
     FocusDirective,
     ToogleDirective,
     NotifyComponent,
     GlobalErrorComponent,
     SpinnerComponent,
-    ModalComponent
+    ModalComponent,
   ]
 })
 export class SharedModule { }
