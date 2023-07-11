@@ -3,7 +3,7 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse
 import { catchError, Observable, throwError } from 'rxjs';
 import { NotificationService } from 'src/app/shared/services/notification.service';
 
-const APIURL = 'http://localhost:3000/'
+const APIURL = 'https://news-backend-vbg5.onrender.com/'
 
 @Injectable()
 export class ApiInterceptor implements HttpInterceptor {
